@@ -38,6 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        //for registration route
         if (Auth::check() && Auth::user()->role->id==1){
             $this->redirectTo=route('admin.dashboard');
         }
@@ -72,6 +73,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            //crate or registration  only author
             'role_id' => 2,
             'name' => $data['name'],
             'username' => str_slug($data['username']),

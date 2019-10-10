@@ -34,7 +34,7 @@ Route::group(['middleware'=>['auth']],function (){
 });
 
 
-
+//author related route,Author/....
 Route::group(['as'=>'author.','prefix'=>'author','namespace'=>'Author','middleware'=>['auth','author']],function (){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
 

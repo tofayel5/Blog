@@ -17,6 +17,7 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        //redirect for specific route
         if (Auth::guard($guard)->check()&& Auth::user()->role->id==1) {
             return redirect()->route('admin.dashboard');
         }

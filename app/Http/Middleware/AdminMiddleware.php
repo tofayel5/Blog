@@ -17,6 +17,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
+        //response for admin dashboard
         if (Auth::check()&& Auth::user()->isAdmin() ){
             return $next($request);
         }

@@ -35,11 +35,15 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        //after login redirect route
         if (Auth::check() && Auth::user()->role->id==1){
-            $this->redirectTo = url('admin/dashboard');
+            //$this->redirectTo = url('admin/dashboard');
+            $this->redirectTo = route('admin.dashboard');
         }
         else{
-            $this->redirectTo = url('author/dashboard');
+           // $this->redirectTo = url('author/dashboard');
+            $this->redirectTo = route('author.dashboard');
+
         }
         $this->middleware('guest')->except('logout');
     }

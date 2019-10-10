@@ -16,6 +16,7 @@ class AuthorMiddleware
      */
     public function handle($request, Closure $next)
     {
+        //response for author dashboard
         if (Auth::check() && Auth::user()->isAuthor() ){
             return $next($request);
         }
