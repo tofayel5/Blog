@@ -12,6 +12,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        //hard code for create admin and author
+        //this seed for testing purpose
         DB::table('users')->insert([
             'role_id'=>'1',
             'name'=>'MD.Admin',
